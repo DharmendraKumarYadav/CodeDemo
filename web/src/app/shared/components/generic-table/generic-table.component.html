@@ -1,0 +1,153 @@
+<ng-container>
+  <!-- Filter -->
+  <mat-card>
+    <div class="your-header">
+      <mat-card-title-group>
+        <mat-card-title> {{ tableTitle }}</mat-card-title>
+        <div>
+            <button style="margin-right: 20px;"
+            *ngIf="IsAddButton"
+            mat-raised-button
+            color="primary"
+            (click)="emitRowAction('', 'ADD')"
+          >
+            {{ addBtnText }}
+          </button>
+           
+
+  <button
+  
+  mat-raised-button
+  color="primary"
+  (click)="exportToExcel()"
+>
+  Excel
+  <mat-icon>cloud_download</mat-icon>
+</button>
+
+         
+        </div>
+      </mat-card-title-group>
+    </div>
+
+    <mat-card-content>
+      <ng-container [matColumnDef]="this.rowActionIcon">
+        <mat-form-field appearance="outline">
+          <mat-label>Search</mat-label>
+          <span matPrefix>
+            <mat-icon>search</mat-icon>
+          </span>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Search" />
+        </mat-form-field>
+      </ng-container>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Table -->
+  <table
+    mat-table
+    class="mat-elevation-z0"
+    [dataSource]="tableDataSource"
+    matSort
+    (matSortChange)="sortTable($event)"
+  >
+    <ng-container
+      *ngFor="let tableColumn of tableColumns"
+      [matColumnDef]="tableColumn.name"
+    >
+      <!-- if sortable column header -->
+      <ng-container *ngIf="tableColumn.isSortable; else notSortable">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          [mat-sort-header]="tableColumn.name"
+          [arrowPosition]="'after'"
+        >
+          {{ tableColumn.name }}
+        </th>
+      </ng-container>
+      <!-- else not sortable -->
+      <ng-template #notSortable>
+        <th mat-header-cell *matHeaderCellDef>
+          {{ tableColumn.name }}
+        </th>
+      </ng-template>
+
+      <!-- column data -->
+      <td mat-cell *matCellDef="let element">
+        <ng-container
+          *ngIf="
+            tableColumn.dataKey == 'isEnabled' &&
+            tableColumn.dataKey != 'imageUrl'
+          "
+        >
+          <mat-chip-list aria-label="Fish selection">
+            <mat-chip *ngIf="element.isEnabled" color="accent" selected
+              >Active</mat-chip
+            >
+            <mat-chip *ngIf="!element.isEnabled" color="warn"
+              >In Active</mat-chip
+            >
+          </mat-chip-list>
+        </ng-container>
+        <ng-container *ngIf="tableColumn.dataKey == 'imageUrl'">
+          <img *ngIf="element.imageUrl!=''"
+            [src]="element.imageUrl"
+            width="40px"
+            height="40px"
+            alt="Image Source"
+          />
+        </ng-container>
+        <ng-container
+          *ngIf="
+            tableColumn.dataKey != 'isEnabled' &&
+            tableColumn.dataKey != 'imageUrl'
+          "
+        >
+          {{ element | dataPropertyGetter : tableColumn.dataKey }}
+        </ng-container>
+      </td></ng-container
+    >
+
+    <!-- action column -->
+    <ng-container [matColumnDef]="rowActionIcon" *ngIf="IsActionVisible">
+      <th mat-header-cell *matHeaderCellDef>Action</th>
+      <td mat-cell *matCellDef="let element">
+        <button
+          mat-button
+          *ngIf="IsEditButton"
+          (click)="emitRowAction(element, 'EDIT')"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+          *ngIf="IsDeleteButton"
+          color="warn"
+          mat-button
+          (click)="emitRowAction(element, 'DELETE')"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button
+          color="acent"
+          *ngIf="IsViewButton"
+          mat-button
+          (click)="emitRowAction(element, 'VIEW')"
+        >
+          <mat-icon>remove_red_eye</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <!-- Pagination -->
+  <mat-paginator
+    *ngIf="isPageable"
+    [pageSizeOptions]="paginationSizes"
+    [pageSize]="defaultPageSize"
+    showFirstLastButtons
+  >
+  </mat-paginator>
+</ng-container>

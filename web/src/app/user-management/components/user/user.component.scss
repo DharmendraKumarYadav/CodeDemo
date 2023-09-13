@@ -1,0 +1,5 @@
+.mat-select-disabled {
+    ::ng-deep .mat-select-value {
+      color:  black !important;
+    }
+}

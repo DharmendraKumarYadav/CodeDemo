@@ -1,0 +1,72 @@
+<div class="container bgcolor" fxLayout="row" fxLayoutAlign="center center">
+    <form [formGroup]="formGroup" fxFlex="100%" fxFlex.sm="60%" fxFlex.xs="90%">
+      <mat-card>
+        <mat-card-title>{{ formName }}</mat-card-title>
+        <mat-card-content>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Name</mat-label>
+  
+            <input
+              matInput
+              type="text"
+              placeholder="Name"
+              formControlName="name"
+              autocomplete="off"
+              required
+            />
+  
+            <mat-error>
+              <error-mesage
+                [control]="form.name"
+                [validation]="validationMessage.name"
+              >
+              </error-mesage>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Description</mat-label>
+            <textarea
+              matInput
+              type="text"
+              placeholder="Description"
+              formControlName="description"
+              autocomplete="off"
+              required
+            ></textarea>
+  
+            <mat-error>
+              <error-mesage
+                [control]="form.description"
+                [validation]="validationMessage.description"
+              >
+              </error-mesage>
+            </mat-error>
+          </mat-form-field>
+       
+
+  <div>
+  </div>
+          <mat-card-actions class="form-actions" *ngIf="!isView">
+            <button *ngIf="isAdd"
+              mat-raised-button
+              color="primary"
+              [disabled]="formGroup.invalid || isLoading"
+              (click)="save()"
+            >
+              Submit
+            </button>
+            <button *ngIf="isEdit"
+            mat-raised-button
+            color="primary"
+            [disabled]="formGroup.invalid || isLoading"
+            (click)="update()"
+          >
+            Update
+          </button>
+            <button mat-button (click)="resteForm()" type="button">Reset</button>
+          </mat-card-actions>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </div>
+  

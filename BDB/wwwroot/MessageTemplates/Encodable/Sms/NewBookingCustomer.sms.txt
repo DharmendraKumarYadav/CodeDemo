@@ -1,0 +1,1 @@
+﻿Booking Placed: Thanks for your confirm booking place at M/s Dekh Bike Dekh. Your booking for, Bike: {product} with Booking Id : {orderid} Gross Total Amount Rs. {amount} - Team Dekh Bike Dekh

@@ -1,0 +1,8 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "",
+"LaunchCommand": "",
+"WorkingDirectory": "D:\\Workspace\\DekhBikeDekh\\api\\BDB",
+"MaxTimeoutInSeconds": "120"
+}
+}

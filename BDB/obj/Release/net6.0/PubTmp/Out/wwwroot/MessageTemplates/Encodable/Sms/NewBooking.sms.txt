@@ -1,0 +1,1 @@
+﻿Dear {#name#}, new booking for {#bikeName#} with booking id {#bookingId#} has been requested. From: Litra Motors

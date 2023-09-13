@@ -1,0 +1,103 @@
+<div>
+  <div
+    class="container"
+    fxLayout="row"
+    fxLayout.xs="column"
+    fxLayoutWrap
+    fxLayoutGap="0.5%"
+    fxLayoutAlign="center"
+    fxLayoutAlign="space-around"
+  >
+    <div
+      style="height: 50px"
+      fxLayout="row"
+      fxLayoutAlign="flex-start"
+      fxFlex="40%"
+      fxFlex.sm="40%"
+      fxFlex.xs="40%"
+    >
+      <div class="loginContentHolder">
+        <div class="loginHolder">
+          <div style="height: 10px">
+            <form [formGroup]="loginForm">
+              <mat-card class="divclass">
+                <mat-card-title>Sign In</mat-card-title>
+                <mat-card-subtitle>Log in to your account</mat-card-subtitle>
+                <mat-card-content>
+                  <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>User Id</mat-label>
+                    <span matPrefix>
+                      <mat-icon>perm_identity</mat-icon>
+                    </span>
+                    <input
+                      matInput
+                      placeholder="User Id"
+                      formControlName="userid"
+                      autocomplete="off"
+                      type="text"
+                      trim
+                      
+                    />
+                    <mat-error>
+                      <error-mesage
+                        [control]="form.userid"
+                        [validation]="validationMessage.userid"
+                      >
+                      </error-mesage>
+                    </mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <span matPrefix>
+                      <mat-icon>lock</mat-icon>
+                    </span>
+                    <input
+                      class="input"
+                      id="keyboard2"
+                      matInput
+                      [type]="hide ? 'password' : 'text'"
+                      placeholder="Password"
+                      formControlName="password"
+                      autocomplete="off"
+                      
+                    />
+
+                    <button mat-icon-button matSuffix (click)="hide = !hide">
+                      <mat-icon>{{
+                        hide ? "visibility_off" : "visibility"
+                      }}</mat-icon>
+                    </button>
+                    <mat-error>
+                      <error-mesage
+                        [control]="form.password"
+                        [validation]="validationMessage.password"
+                      >
+                      </error-mesage>
+                    </mat-error>
+                  </mat-form-field>
+                  <mat-checkbox
+                    #checkbox
+                    >Remember Me
+                  </mat-checkbox>
+                </mat-card-content>
+
+                <mat-card-actions class="form-actions">
+                  <button
+                    mat-raised-button
+                    class="btnSignin"
+                    color="primary"
+                    [disabled]="loginForm.invalid || loading"
+                    (click)="login()"
+                  >
+                    Login
+                  </button>
+                </mat-card-actions>
+              </mat-card>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

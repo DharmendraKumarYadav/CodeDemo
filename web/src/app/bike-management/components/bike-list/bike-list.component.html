@@ -1,0 +1,13 @@
+<app-generic-table *ngIf="isLoading" [tableData]="dataSorce"
+              [tableColumns]="tableColumns"
+              [isFilterable]="true"
+              [isPageable]="true"
+              (sort)="sortData($event)"
+              [IsViewButton]="false"
+              [IsEditButton]="true"
+              [IsDeleteButton]="true"
+              [rowActionIcon]="'add'"
+              [tableTitle]="tableTitle"
+              [addBtnText]="addBtnText"
+              (rowAction)="actionClick($event)">
+</app-generic-table>

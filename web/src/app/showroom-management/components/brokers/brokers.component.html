@@ -1,0 +1,13 @@
+<app-generic-table  [tableData]="dataSorce"
+              [tableColumns]="tableColumns"
+              [isFilterable]="true"
+              [isPageable]="true"
+              (sort)="sortData($event)"
+              [rowActionIcon]="'add'"
+              [IsAddButton]="false"
+              [IsEditButton]="false"
+              [IsDeleteButton]="false"
+              [tableTitle]="tableTitle"
+              [IsActionVisible]="true"
+              (rowAction)="actionClick($event)">
+</app-generic-table>

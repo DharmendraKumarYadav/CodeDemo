@@ -1,0 +1,670 @@
+[
+  {
+    "value": "ZMW",
+    "text": "ZAMBIAN KWACHA"
+  },
+  {
+    "value": "ZWD",
+    "text": "ZIMBABWE DOLLAR"
+  },
+  {
+    "value": "AFN",
+    "text": "AFGHANI AFGHAN"
+  },
+  {
+    "value": "ADP",
+    "text": "ANDORRAN PESETA"
+  },
+  {
+    "value": "AED",
+    "text": "UAE DIRHAM"
+  },
+  {
+    "value": "AFA",
+    "text": "AFGHANI"
+  },
+  {
+    "value": "ARS",
+    "text": "ARGENTINE PESO"
+  },
+  {
+    "value": "AUD",
+    "text": "AUSTRALIAN DOLLAR"
+  },
+  {
+    "value": "BGL",
+    "text": "LEV"
+  },
+  {
+    "value": "BHD",
+    "text": "BAHRAINI DINAR"
+  },
+  {
+    "value": "BND",
+    "text": "BRUNEI DOLLAR"
+  },
+  {
+    "value": "BRL",
+    "text": "BRAZILIAN REAL"
+  },
+  {
+    "value": "CAD",
+    "text": "CANADIAN DOLLAR"
+  },
+  {
+    "value": "CHF",
+    "text": "SWISS FRANC"
+  },
+  {
+    "value": "CLP",
+    "text": "CHILEAN PESO"
+  },
+  {
+    "value": "CNY",
+    "text": "YUAN RENMINBI"
+  },
+  {
+    "value": "CZK",
+    "text": "CZEC KORUNA"
+  },
+  {
+    "value": "DKK",
+    "text": "DANISH KRONE"
+  },
+  {
+    "value": "EUR",
+    "text": "EURO"
+  },
+  {
+    "value": "GBP",
+    "text": "POUND STERLING"
+  },
+  {
+    "value": "GWP",
+    "text": "GUINEA-BISSAU PESO"
+  },
+  {
+    "value": "HKD",
+    "text": "HONG KONG DOLLAR"
+  },
+  {
+    "value": "IDR",
+    "text": "INDONESIAN RUPIAH"
+  },
+  {
+    "value": "INR",
+    "text": "INDIAN RUPEE"
+  },
+  {
+    "value": "JEP",
+    "text": "JERSEY POUND"
+  },
+  {
+    "value": "JPY",
+    "text": "JAPANESE YEN"
+  },
+  {
+    "value": "KRW",
+    "text": "KOREAN WON"
+  },
+  {
+    "value": "KWD",
+    "text": "KUWAITI DINAR"
+  },
+  {
+    "value": "LBP",
+    "text": "LEBANESE POUND"
+  },
+  {
+    "value": "LKR",
+    "text": "SRI LANKA RUPEE"
+  },
+  {
+    "value": "MAD",
+    "text": "MOROCCAN DIRHAM"
+  },
+  {
+    "value": "MTL",
+    "text": "MALTESE LIRA"
+  },
+  {
+    "value": "MUR",
+    "text": "MAURITIUS RUPEE"
+  },
+  {
+    "value": "MYR",
+    "text": "MALAYSIAN RINGGIT"
+  },
+  {
+    "value": "NGN",
+    "text": "NIGERIAN NAIRA"
+  },
+  {
+    "value": "NOK",
+    "text": "NORWEGIAN KRONE"
+  },
+  {
+    "value": "NZD",
+    "text": "NEW ZEALAND DOLLAR"
+  },
+  {
+    "value": "OMR",
+    "text": "OMANI RIAL "
+  },
+  {
+    "value": "PHP",
+    "text": "PHILIPPINE PESO"
+  },
+  {
+    "value": "PKR",
+    "text": "PAKISTAN RUPEE"
+  },
+  {
+    "value": "PLN",
+    "text": "POLISH ZLOTY"
+  },
+  {
+    "value": "QAR",
+    "text": "QATARI RIAL"
+  },
+  {
+    "value": "RUB",
+    "text": "RUSSIAN RUBLE"
+  },
+  {
+    "value": "RUR",
+    "text": "RUSSIAN RUBLE"
+  },
+  {
+    "value": "SAR",
+    "text": "SAUDI RIYAL"
+  },
+  {
+    "value": "SEK",
+    "text": "SWEDISH KRONA"
+  },
+  {
+    "value": "SGD",
+    "text": "SINGAPORE DOLLAR"
+  },
+  {
+    "value": "SHP",
+    "text": "ST HELENA POUND"
+  },
+  {
+    "value": "SYP",
+    "text": "SYRIAN POUND"
+  },
+  {
+    "value": "THB",
+    "text": "THAI BAHT"
+  },
+  {
+    "value": "TND",
+    "text": "TUNISIAN DINAR"
+  },
+  {
+    "value": "TPE",
+    "text": "TIMOR ESCUDO"
+  },
+  {
+    "value": "TTD",
+    "text": "TRINI-TOBAGO DOLLAR"
+  },
+  {
+    "value": "TWD",
+    "text": "TAIWANESE DOLLAR"
+  },
+  {
+    "value": "USD",
+    "text": "UNITED STATES DOLLAR"
+  },
+  {
+    "value": "ZAR",
+    "text": "SOUTH AFRICAN RAND"
+  },
+  {
+    "value": "VND",
+    "text": "VIETtextSE DONG"
+  },
+  {
+    "value": "ALL",
+    "text": "ALBANIAN LEK"
+  },
+  {
+    "value": "AMD",
+    "text": "ARMENIAN DRAM"
+  },
+  {
+    "value": "ANG",
+    "text": "NETHERLANDS ANTILLES"
+  },
+  {
+    "value": "AOA",
+    "text": "ANGOLA KWANZA"
+  },
+  {
+    "value": "AWG",
+    "text": "ARUBA GUILDER"
+  },
+  {
+    "value": "AZN",
+    "text": "AZERBAIJAN NEW MANAT"
+  },
+  {
+    "value": "BAM",
+    "text": "BAM"
+  },
+  {
+    "value": "BBD",
+    "text": "BARBADOS DOLLAR"
+  },
+  {
+    "value": "BDT",
+    "text": "BANGLADESHI TAKA"
+  },
+  {
+    "value": "BGN",
+    "text": "BULGARIAN LEV"
+  },
+  {
+    "value": "BIF",
+    "text": "BURUNDI FRANC"
+  },
+  {
+    "value": "BMD",
+    "text": "BERMUDA DOLLAR"
+  },
+  {
+    "value": "BOB",
+    "text": "BOLIVIANO"
+  },
+  {
+    "value": "BSD",
+    "text": "BAHAMAS DOLLAR"
+  },
+  {
+    "value": "BTN",
+    "text": "BHUTAN NGULTRUM"
+  },
+  {
+    "value": "BWP",
+    "text": "BOTSWANESE PULA"
+  },
+  {
+    "value": "BYR",
+    "text": "BELARUS RUBLE"
+  },
+  {
+    "value": "BZD",
+    "text": "BELIZE DOLLAR"
+  },
+  {
+    "value": "CDF",
+    "text": "CONGOLESE FRANC"
+  },
+  {
+    "value": "COP",
+    "text": "COLOMBIAN PESO"
+  },
+  {
+    "value": "CRC",
+    "text": "COSTA RICAN COLON"
+  },
+  {
+    "value": "CUC",
+    "text": "CUBA CONVERTIBLE PESO"
+  },
+  {
+    "value": "CUP",
+    "text": "CUBAN PESO"
+  },
+  {
+    "value": "CVE",
+    "text": "CAPE-VERDE ESCUDO"
+  },
+  {
+    "value": "DJF",
+    "text": "DJIBOUTI FRANC"
+  },
+  {
+    "value": "DOP",
+    "text": "DOMINICAN PESO"
+  },
+  {
+    "value": "DZD",
+    "text": "ALGERIAN DINAR"
+  },
+  {
+    "value": "EGP",
+    "text": "EGYPTIAN POUND"
+  },
+  {
+    "value": "ERN",
+    "text": "ERITREAN NAKFA"
+  },
+  {
+    "value": "ETB",
+    "text": "ETHIOPIAN BIRR"
+  },
+  {
+    "value": "FJD",
+    "text": "FIJIAN DOLLAR"
+  },
+  {
+    "value": "FKP",
+    "text": "FALKLAND STERLING"
+  },
+  {
+    "value": "GEL",
+    "text": "GEORGIAN LARIE"
+  },
+  {
+    "value": "GHS",
+    "text": "GHANA CEDI"
+  },
+  {
+    "value": "GIP",
+    "text": "GIBRALTAR STERLING"
+  },
+  {
+    "value": "GMD",
+    "text": "GAMBIAN DALASIE"
+  },
+  {
+    "value": "GNF",
+    "text": "GUINEAN FRANC"
+  },
+  {
+    "value": "GTQ",
+    "text": "GUATEMALA QUETZAL"
+  },
+  {
+    "value": "GYD",
+    "text": "GUYANA DOLLAR"
+  },
+  {
+    "value": "HNL",
+    "text": "HONDURAS LEMPIRA"
+  },
+  {
+    "value": "HRK",
+    "text": "CROATIAN KUNA"
+  },
+  {
+    "value": "HTG",
+    "text": "HAITIAN GOURD"
+  },
+  {
+    "value": "HUF",
+    "text": "HUNGARIAN FORINT"
+  },
+  {
+    "value": "ILS",
+    "text": "ISRAELI SHEKEL"
+  },
+  {
+    "value": "IQD",
+    "text": "IRAQI DINAR"
+  },
+  {
+    "value": "IRR",
+    "text": "IRANIAN RIAL"
+  },
+  {
+    "value": "ISK",
+    "text": "ICELANDIC CROWN"
+  },
+  {
+    "value": "JMD",
+    "text": "JAMAICAN DOLLAR"
+  },
+  {
+    "value": "JOD",
+    "text": "JORDANIAN DIRHAM"
+  },
+  {
+    "value": "KES",
+    "text": "KENYAN SHILLING"
+  },
+  {
+    "value": "KGS",
+    "text": "KIRGHIZISTAN SOM"
+  },
+  {
+    "value": "KHR",
+    "text": "DEMOCRATIC KAMPUCHEA RIEL"
+  },
+  {
+    "value": "KMF",
+    "text": "COMORO ISLANDS FRANC"
+  },
+  {
+    "value": "KPW",
+    "text": "NORTH KOREAN WON"
+  },
+  {
+    "value": "KYD",
+    "text": "CAYMAN ISLANDS DOLLAR"
+  },
+  {
+    "value": "KZT",
+    "text": "KAZAKHSTAN TENGUE"
+  },
+  {
+    "value": "LAK",
+    "text": "LAOS KIP"
+  },
+  {
+    "value": "LRD",
+    "text": "LRD"
+  },
+  {
+    "value": "LSL",
+    "text": "LIBERIAN DOLLAR"
+  },
+  {
+    "value": "LTL",
+    "text": "LESOTHO LOTI"
+  },
+  {
+    "value": "LVL",
+    "text": "LATVIAN LATS"
+  },
+  {
+    "value": "LYD",
+    "text": "LYBIAN DINAR"
+  },
+  {
+    "value": "MDL",
+    "text": "MOLDAVIAN LEU"
+  },
+  {
+    "value": "MGA",
+    "text": "MALAGASY FRANC"
+  },
+  {
+    "value": "MKD",
+    "text": "MACEDONIAN DENAR"
+  },
+  {
+    "value": "MMK",
+    "text": "MYANMAR (BURMA) KYAT"
+  },
+  {
+    "value": "MNT",
+    "text": "MONGOLIAN TUGRIK"
+  },
+  {
+    "value": "MOP",
+    "text": "MACAO PATACA"
+  },
+  {
+    "value": "MRO",
+    "text": "MAURITANIAN OUGUIYA"
+  },
+  {
+    "value": "MVR",
+    "text": "MALDIVIAN RUFIYAA"
+  },
+  {
+    "value": "MWK",
+    "text": "MALAWI KWACHA"
+  },
+  {
+    "value": "MXN",
+    "text": "MEXICAN PESO"
+  },
+  {
+    "value": "MZN",
+    "text": "MOZAMBIQUE METICAL"
+  },
+  {
+    "value": "NAD",
+    "text": "NAMIBIAN DOLLAR"
+  },
+  {
+    "value": "NIO",
+    "text": "NICARAGUA CORDOBA ORO"
+  },
+  {
+    "value": "NPR",
+    "text": "NEPALESE ROUPIA"
+  },
+  {
+    "value": "PAB",
+    "text": "PANAMA BALBOA"
+  },
+  {
+    "value": "PEN",
+    "text": "PERUVIAN OL"
+  },
+  {
+    "value": "PGK",
+    "text": "PAPOUASIA NEW GUINEA KINA"
+  },
+  {
+    "value": "PYG",
+    "text": "PARAGUAYAN GUARANI"
+  },
+  {
+    "value": "RON",
+    "text": "ROMANIAN NEW LEU"
+  },
+  {
+    "value": "RSD",
+    "text": "SERBIA DINAR"
+  },
+  {
+    "value": "RWF",
+    "text": "RWANDAN FRANC"
+  },
+  {
+    "value": "SBD",
+    "text": "SALOMON ISLANDS DOLLAR"
+  },
+  {
+    "value": "SCR",
+    "text": "SEYCHELLES ISLANDS ROUPIA"
+  },
+  {
+    "value": "SDG",
+    "text": "SUDAN POUND"
+  },
+  {
+    "value": "SLL",
+    "text": "SIERRA LEONE LEONE"
+  },
+  {
+    "value": "SOS",
+    "text": "SIERRA LEONE LEONE"
+  },
+  {
+    "value": "SRD",
+    "text": "SURItext DOLLAR"
+  },
+  {
+    "value": "STD",
+    "text": "SAO TOME AND PRINCIPE DOBRA"
+  },
+  {
+    "value": "SVC",
+    "text": "EL SALVADOR COLON"
+  },
+  {
+    "value": "SZL",
+    "text": "SWAZILAND LILANGENI"
+  },
+  {
+    "value": "TJS",
+    "text": "TAJIK SOMONI"
+  },
+  {
+    "value": "TMT",
+    "text": "TURKMENISTAN MANAT"
+  },
+  {
+    "value": "TOP",
+    "text": "TONGA PA'ANGA"
+  },
+  {
+    "value": "TRY",
+    "text": "TURKISH LIRA"
+  },
+  {
+    "value": "TZS",
+    "text": "TANZANIAN SHILLING"
+  },
+  {
+    "value": "UAH",
+    "text": "UKRAINE HRYVNA"
+  },
+  {
+    "value": "UGX",
+    "text": "UGANDAN SHILLING"
+  },
+  {
+    "value": "UYU",
+    "text": "URUGUAYAN PESO"
+  },
+  {
+    "value": "UZS",
+    "text": "UZBEKISTAN SOM"
+  },
+  {
+    "value": "VEF",
+    "text": "VENEZUELA BOLIVAR FUERTE"
+  },
+  {
+    "value": "VUV",
+    "text": "VANUATU VATU"
+  },
+  {
+    "value": "WST",
+    "text": "SAMOA TALA"
+  },
+  {
+    "value": "XAF",
+    "text": "CFA BEAC FRANC"
+  },
+  {
+    "value": "XCD",
+    "text": "EAST CARIBBEAN DOLLAR"
+  },
+  {
+    "value": "XDR",
+    "text": "SPECIAL DRAWING RIGHTS"
+  },
+  {
+    "value": "XOF",
+    "text": "Franc CFA BCEAO"
+  },
+  {
+    "value": "XPF",
+    "text": "CFP FRANC"
+  },
+  {
+    "value": "YER",
+    "text": "YEMEN RIAL"
+  }
+]

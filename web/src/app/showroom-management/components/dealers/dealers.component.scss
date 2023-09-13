@@ -1,0 +1,15 @@
+.spacer{
+    flex: 1 1 auto;
+}
+
+.delete-btn{
+    color: #999;
+}
+.delete-btn:hover{
+    color: red;
+}
+
+/* fixed width for icon columns */
+.mat-column-Edit, .mat-column-Delete{
+    max-width: 50px;
+}

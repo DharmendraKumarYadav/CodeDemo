@@ -1,0 +1,15 @@
+
+<div class="snackbar-container">
+    <mat-icon aria-hidden="false" aria-label="Example home icon">
+        notifications
+     </mat-icon>
+     <p class="information">
+         <strong>Notification</strong><br>
+         {{ data }}
+     </p>
+    <div class="button-container">
+        <button (click)="snackBarRef.dismiss()" mat-button mat-icon-button aria-label="Clear" >
+            <mat-icon>close</mat-icon>
+        </button> 
+    </div>
+</div>

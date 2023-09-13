@@ -1,0 +1,170 @@
+<div class="container bgcolor" fxLayout="row" fxLayoutAlign="center center">
+  <form [formGroup]="formGroup" fxFlex="100%" fxFlex.sm="60%" fxFlex.xs="90%">
+    <mat-card>
+      <mat-card-title>{{ formName }}</mat-card-title>
+      <mat-card-content>
+        <mat-form-field class="half-width" appearance="outline">
+          <mat-label>Name</mat-label>
+
+          <input
+            matInput
+            type="text"
+            placeholder="Name"
+            formControlName="fullName"
+            autocomplete="off"
+            required
+          />
+
+          <mat-error>
+            <error-mesage
+              [control]="form.fullName"
+              [validation]="validationMessage.fullName"
+            >
+            </error-mesage>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="half-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="Email"
+            formControlName="email"
+            autocomplete="off"
+            required
+          />
+
+          <mat-error>
+            <error-mesage
+              [control]="form.email"
+              [validation]="validationMessage.email"
+            >
+            </error-mesage>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="half-width" appearance="outline" *ngIf="isAdd">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+            autocomplete="off"
+            required
+          />
+
+          <mat-error>
+            <error-mesage
+              [control]="form.password"
+              [validation]="validationMessage.password"
+            >
+            </error-mesage>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="half-width" appearance="outline">
+          <mat-label>User Name</mat-label>
+
+          <input
+            matInput
+            type="text"
+            placeholder="User Name"
+            formControlName="userName"
+            autocomplete="off"
+            required
+          />
+
+          <mat-error>
+            <error-mesage
+              [control]="form.userName"
+              [validation]="validationMessage.userName"
+            >
+            </error-mesage>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="half-width" appearance="outline">
+          <mat-label>Phone</mat-label>
+
+          <input
+            matInput
+            type="text"
+            placeholder="Name"
+            formControlName="phoneNumber"
+            autocomplete="off"
+            required
+          />
+
+          <mat-error>
+            <error-mesage
+              [control]="form.phoneNumber"
+              [validation]="validationMessage.phoneNumber"
+            >
+            </error-mesage>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="half-width" appearance="outline">
+          <mat-label>Role</mat-label>
+
+          <mat-select formControlName="role" required>
+            <mat-option>Select Role</mat-option>
+            <mat-option *ngFor="let role of roles" [value]="role.name">
+              {{ role.name }}
+            </mat-option>
+          </mat-select>
+
+          <mat-error>
+            <error-mesage
+              [control]="form.role"
+              [validation]="validationMessage.role"
+            >
+            </error-mesage>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline" *ngIf="isBroker">
+          <mat-label>Select Dealer</mat-label>
+          <mat-select formControlName="dealerIds" required multiple>
+            <mat-option *ngFor="let item of dealers" [value]="item.id">{{ item.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error>
+            <error-mesage
+              [control]="form.dealerIds"
+              [validation]="validationMessage.dealer"
+            >
+            </error-mesage>
+          </mat-error>
+        </mat-form-field>
+        <div class="mat-form-field pd-left-10">
+          <mat-checkbox formControlName="isEnabled" >
+             Enabled
+          </mat-checkbox>
+          <mat-error *ngIf="form.isEnabled.errors">
+            <error-mesage
+              [control]="form.isEnabled"
+              [validation]="validationMessage.isEnabled"
+            >
+            </error-mesage>
+          </mat-error>    
+      </div> 
+
+        <mat-card-actions class="form-actions" *ngIf="!isView">
+          <button *ngIf="isAdd"
+            mat-raised-button
+            color="primary"
+            [disabled]="formGroup.invalid || isLoading"
+            (click)="save()"
+          >
+            Submit
+          </button>
+          <button *ngIf="isEdit"
+          mat-raised-button
+          color="primary"
+          [disabled]="formGroup.invalid || isLoading"
+          (click)="update()"
+        >
+          Update
+        </button>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+  </form>
+</div>

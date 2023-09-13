@@ -1,0 +1,26 @@
+<!-- <mat-card class="dashboard-card">
+    <mat-card-header class="dashboard-card__header">
+      <mat-card-title>
+        <h3 class="kpi-title">{{title}}</h3>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="dashboard-card-content kpi-result">
+      <span>{{prefix}}</span>
+      <span >{{count}}</span>
+      <span>{{postfix}}</span>
+    </mat-card-content>
+  </mat-card> -->
+  <mat-card class="dashboard-card">
+    <mat-card-header>
+        <mat-card-title>
+          <h3 class="kpi-title">{{title}}</h3>
+            <button mat-icon-button class="more-button" aria-label="Toggle menu">
+                <mat-icon [style.color]="colour">{{icon}}</mat-icon>
+            </button>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="dashboard-card-content kpi-result">
+        <span [style.color]="colour" >{{count}}</span>
+
+    </mat-card-content>
+ </mat-card>

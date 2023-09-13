@@ -1,0 +1,26 @@
+.static-text {
+
+    :disabled {
+      color: black;
+    }
+
+    ::ng-deep .mat-form-field-underline {
+      display: none;
+    }
+  }
+
+  ::ng-deep .mat-form-field.mat-form-field-should-float .mat-form-field-infix{
+    position: initial;
+}
+::ng-deep .mat-form-field.mat-form-field-should-float .mat-form-field-label-wrapper{
+    top: 0;
+    left: -3px;
+}
+::ng-deep .mat-accordion .mat-expansion-panel{
+    margin-bottom: 10px;
+  }
+  .dialog-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }

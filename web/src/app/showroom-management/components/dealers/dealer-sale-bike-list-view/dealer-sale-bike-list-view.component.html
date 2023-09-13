@@ -1,0 +1,76 @@
+
+
+<mat-card>
+    <div class="your-header">
+      <mat-card-title-group>
+        <mat-card-title>Dealer Bikes</mat-card-title>
+        <div>
+        </div>
+      </mat-card-title-group>
+    </div>
+
+    <mat-card-content>
+        <div class="table-warp">
+            <div class="example-table-container">
+              <table mat-table
+                     matSort
+                     [dataSource]="tableDataSource"
+                     class="table"
+              >
+       
+                <ng-container matColumnDef="variantName">
+                  <th matSort mat-header-cell *matHeaderCellDef mat-sort-header>Bike Name</th>
+                  <td mat-cell *matCellDef="let element"> {{element['variantName']}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="exShowRoomPrice">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>ShowRoom</th>
+                  <td mat-cell *matCellDef="let element"> {{element['exShowRoomPrice']}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="insurancePrice">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Insurance</th>
+                  <td mat-cell *matCellDef="let element"> {{element['insurancePrice']}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="rtoPrice">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>RTO</th>
+                  <td mat-cell *matCellDef="let element"> {{element['rtoPrice']}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="price">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Total</th>
+                  <td mat-cell *matCellDef="let element"> {{element['price']}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="bookingAmount">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Booking Amount</th>
+                  <td mat-cell *matCellDef="let element"> {{element['bookingAmount']}} </td>
+                </ng-container>
+                <ng-container matColumnDef="chesisNumber">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header > Chesis Number</th>
+                  <td mat-cell *matCellDef="let element"> {{element['chesisNumber']}} </td>
+                </ng-container>
+                  
+                <ng-container matColumnDef="engineNumber">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header >Engine Number</th>
+                  <td mat-cell *matCellDef="let element"> {{element['engineNumber']}} </td>
+                </ng-container>
+             
+          
+            
+                <tr mat-header-row *matHeaderRowDef="displayedColumns;sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+              <mat-paginator
+              [pageSizeOptions]="paginationSizes"
+              [pageSize]="defaultPageSize"
+              showFirstLastButtons
+            >
+            </mat-paginator>
+            </div>
+          
+          
+          </div>
+    </mat-card-content>
+  </mat-card>

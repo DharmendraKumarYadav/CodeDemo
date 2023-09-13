@@ -1,0 +1,130 @@
+<div
+  class="navbar-container"
+  [class.example-is-mobile]="mobileQuery.matches"
+  *ngIf="isLoggedIn"
+>
+  <mat-toolbar class="navbar" color="primary">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a
+      class="navbar-brand"
+      routerLink="/"
+      matTooltip="Home"
+      style="margin-top: 10px"
+    >
+      <a href="#"
+        ><img [src]="logo" width="60" height="50" alt="Dekh Bike Dekh"
+        title="Dekh Bike Dekh" class="logo"></a>
+   
+    </a>
+
+    <span class="example-spacer"></span>
+    <span class="navbar-spacer"></span>
+    <span> </span>
+    <div
+      fxLayout="row"
+      fxLayoutAlign="space-between center"
+      fxLayoutGap="20px"
+    ></div>
+   
+    <div class="alert alert-success" *ngIf="notificationCount>0" style=" margin-bottom: 1px;
+  height: 44px;
+  line-height:46px;
+  padding:0px 15px;" role="alert">
+      <button mat-button mat-icon-button aria-label="Clear" >
+        <mat-icon>notifications</mat-icon>
+    </button> 
+   <!-- <mat-icon aria-hidden="false" style="padding-top: 2px;" aria-label="Example home icon">
+    notifications
+ </mat-icon> -->
+    <span>  There is new notifications.</span>
+    <button (click)="onCloseNotification()"  mat-button mat-icon-button aria-label="Clear" >
+      <mat-icon>close</mat-icon>
+  </button> 
+    </div>
+    <button matTooltip="There is new Notifications!"  [matTooltipDisabled]="notificationCount==0" mat-icon-button [matMenuTriggerFor]="notificationMenu">
+      <mat-icon [matBadge]="notificationData?.count" matBadgeColor="warn">notifications</mat-icon>
+    </button>
+    
+    <mat-menu class="my-class"
+    #notificationMenu="matMenu"
+    xPosition="before"
+    yPosition="above"
+    [overlapTrigger]="false"
+  >
+  <div *ngIf="notificationData?.notifications.length>0">
+    <ng-container *ngFor="let item of notificationData?.notifications">
+      <div mat-menu-item>
+       <span (click)="notificationClick(item)"> <mat-icon>history</mat-icon>{{item.name}}  <span style="font-size: 12px;color: green;">  {{item.createdDate |date:'medium'}}</span></span>
+      
+      </div>
+  
+    </ng-container>
+    <div mat-menu-item>
+      <button
+      mat-raised-button
+      class="btnSignin"
+      color="warn"
+    (click)="clearNotification()"
+    >
+     Clear All
+    </button>
+    </div>
+  </div>
+  <div mat-menu-item *ngIf="notificationData?.notifications.length==0">
+       No new notifications
+  </div>
+
+    
+  </mat-menu>
+    <button mat-button [matMenuTriggerFor]="userMenu">
+      <span fxShow fxHide.xs> Welcome !! {{ userName }} </span>
+      <mat-icon>person</mat-icon>
+    </button>
+    <mat-menu
+      #userMenu="matMenu"
+      xPosition="before"
+      yPosition="above"
+      [overlapTrigger]="false"
+    >
+      <a mat-menu-item routerLink="/account/profile">
+        <mat-icon>person</mat-icon>
+        <span>Profile</span>
+      </a>
+      <a mat-menu-item routerLink="/account/change-password">
+        <mat-icon>settings</mat-icon>
+        <span>Change Password</span>
+      </a>
+      <a mat-menu-item (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Log out</span>
+      </a>
+    </mat-menu>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="navbar-sidenav-container" cdkScrollable>
+    <mat-sidenav
+      #snav
+      [opened]="!mobileQuery.matches"
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56"
+      class="sidenav"
+    >
+      <mat-nav-list>
+        <app-menu-list
+          *ngFor="let item of navItems"
+          [item]="item"
+        ></app-menu-list>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="sidenav-content">
+      <div class="progress-bar-container">
+      </div>
+      <div class="main-content">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

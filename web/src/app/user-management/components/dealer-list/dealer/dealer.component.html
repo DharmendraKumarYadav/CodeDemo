@@ -1,0 +1,44 @@
+<div class="container bgcolor" fxLayout="row" fxLayoutAlign="center center">
+    <form [formGroup]="formGroup" fxFlex="100%" fxFlex.sm="60%" fxFlex.xs="90%">
+      <mat-card>
+        <mat-card-title>{{ formName }}</mat-card-title>
+        <mat-card-content>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Local Order</mat-label>
+      
+                <input
+                  matInput
+                  type="number"
+                  placeholder="Order"
+                  formControlName="orderId"
+                  autocomplete="off"
+                  required
+                />
+      
+                <mat-error>
+                  <error-mesage
+                    [control]="form.orderId"
+                    [validation]="validationMessage.orderId"
+                  >
+                  </error-mesage>
+                </mat-error>
+              </mat-form-field>
+        
+          <mat-card-actions class="form-actions">
+            <button
+
+              mat-raised-button
+              color="primary"
+              [disabled]="formGroup.invalid"
+              (click)="save()"
+            >
+              Submit
+            </button>
+           
+           
+          </mat-card-actions>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </div>
+  

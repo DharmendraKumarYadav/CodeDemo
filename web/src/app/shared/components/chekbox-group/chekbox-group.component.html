@@ -1,0 +1,10 @@
+<span [class.horizontal]="horizontal">
+    <ul>
+      <li *ngFor="let item of list">
+        <mat-checkbox [ngModel]="getChecked(control.value,item.value)"
+                      (ngModelChange)="update($event,item.value.value)">
+          {{item.text}}
+        </mat-checkbox>
+      </li>
+    </ul>
+  </span>

@@ -1,0 +1,35 @@
+<div class="container bgcolor" fxLayout="row" fxLayoutAlign="center center">
+    <form [formGroup]="formGroup" fxFlex="100%" fxFlex.sm="60%" fxFlex.xs="90%">
+      <mat-card>
+        <mat-card-title>{{ formName }}</mat-card-title>
+        <mat-card-content>
+        <div *ngIf="isView">
+            <img [src]="imageUrl" width="250px" height="250px" alt="Image Source">
+        </div>
+        
+          <div *ngIf="!isView">
+            <mat-file-upload
+              [allowMultiple]="_allowMultiple"
+              (fileChange)="getUploadedFile($event)"
+            ></mat-file-upload>
+          </div>
+  
+          <div></div>
+          <mat-card-actions class="form-actions" *ngIf="!isView">
+            <button
+              *ngIf="isAdd"
+              mat-raised-button
+              color="primary"
+              [disabled]="formGroup.invalid || isLoading"
+              (click)="save()"
+            >
+              Upload
+            </button>
+       
+           
+          </mat-card-actions>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </div>
+  

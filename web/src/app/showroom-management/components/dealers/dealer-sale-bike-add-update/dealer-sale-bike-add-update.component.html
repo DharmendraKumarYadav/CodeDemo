@@ -1,0 +1,223 @@
+<div class="container bgcolor" fxLayout="row" fxLayoutAlign="center center">
+    <form [formGroup]="formGroup" fxFlex="100%" fxFlex.sm="60%" fxFlex.xs="90%">
+      <mat-card>
+        <mat-card-title>{{ formName }}</mat-card-title>
+        <mat-card-content>
+        <div fxLayout="row">
+           
+          <mat-form-field class="half-width" appearance="outline">
+            <mat-label>Show Room</mat-label>
+  
+            <mat-select formControlName="showRoomId" (selectionChange)="onSelectShowRoom($event)" required>
+              <mat-option>Select Show Room</mat-option>
+              <mat-option *ngFor="let item of showRooms" [value]="item.id">
+                {{ item.name }}
+              </mat-option>
+            </mat-select>
+  
+             <mat-error>
+              <error-mesage
+                [control]="form.showRoomId"
+                [validation]="validationMessage.showRoom"
+              >
+              </error-mesage>
+            </mat-error> 
+          </mat-form-field>
+           
+             <mat-form-field class="half-width" appearance="outline">
+              <mat-label>Select Varaint</mat-label>
+  
+            <mat-select formControlName="bikeVariantsId" required   (selectionChange)="onSelectBikeVariant($event)">
+              <mat-option>Select Bike</mat-option>
+              <mat-option *ngFor="let item of bikeVariantPrice" [value]="item.id">
+                {{ item.name }}
+              </mat-option>
+            </mat-select>
+  
+           <mat-error>
+              <error-mesage
+                [control]="form.bikeVariantsId"
+                [validation]="validationMessage.bikeVariant"
+              >
+              </error-mesage>
+            </mat-error> 
+             </mat-form-field>
+
+
+             <mat-form-field class="half-width" appearance="outline">
+              <mat-label>Select Colour</mat-label>
+              <mat-select formControlName="bikeColurId" required>
+                <mat-option *ngFor="let item of colours" [value]="item.id">{{ item.name }}
+                </mat-option>
+              </mat-select>
+              <mat-error>
+                <error-mesage
+                  [control]="form.bikeColurId"
+                  [validation]="validationMessage.bikeColour"
+                >
+                </error-mesage>
+              </mat-error> 
+            </mat-form-field>
+           
+        </div>
+      <div fxLayout="row">
+        
+        <mat-form-field class="third-width" appearance="outline">
+          <mat-label>Booking Amount</mat-label>
+          <input matInput type="text" placeholder="Amount" formControlName="bookingAmount"
+            autocomplete="off" required  />
+            <mat-hint>Current Price: {{selectedBikePrice.bookingAmount}}</mat-hint>
+            <mat-error>
+              <error-mesage
+                [control]="form.bookingAmount"
+                [validation]="validationMessage.amount"
+              >
+              </error-mesage>
+            </mat-error> 
+            
+        </mat-form-field>
+        <mat-form-field class="third-width" appearance="outline">
+          <mat-label>RTO Amount</mat-label>
+          <input matInput type="text" placeholder="Amount" (input)="calculateValues()" formControlName="rTOPrice"
+            autocomplete="off" required />
+            <mat-hint>Current Price: {{selectedBikePrice.rtoAmount}}</mat-hint>
+            <mat-error>
+              <error-mesage
+                [control]="form.rTOPrice"
+                [validation]="validationMessage.amount"
+              >
+              </error-mesage>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="third-width" appearance="outline">
+          <mat-label>Insurance Amount</mat-label>
+          <input matInput  type="text" placeholder="Amount" (input)="calculateValues()" formControlName="insurancePrice"
+            autocomplete="off" required />
+            <mat-hint>Current Price: {{selectedBikePrice.insuranceAmount}}</mat-hint>
+            <mat-error>
+              <error-mesage
+                [control]="form.insurancePrice"
+                [validation]="validationMessage.amount"
+              >
+              </error-mesage>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="third-width" appearance="outline">
+          <mat-label>Ex ShowRoom Price</mat-label>
+          <input matInput type="text" (input)="calculateValues()" placeholder="Amount" formControlName="exShowRoomPrice"
+            autocomplete="off" required />
+            <mat-hint>Current Price: {{selectedBikePrice.exShowRoomAmount}}</mat-hint>
+            <mat-error>
+              <error-mesage
+                [control]="form.exShowRoomPrice"
+                [validation]="validationMessage.amount"
+              >
+              </error-mesage>
+            </mat-error>
+        </mat-form-field>
+        
+      </div>
+        <div fxLayout="row">
+          <mat-form-field class="third-width" appearance="outline">
+            <mat-label>Availbility</mat-label>
+  
+            <mat-select formControlName="availbility" (selectionChange)="onSelectAvailbility($event)" required>
+              <mat-option>Select Show Room</mat-option>
+              <mat-option *ngFor="let item of bikeAvailbility" [value]="item.id">
+                {{ item.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error>
+              <error-mesage
+                [control]="form.availbility"
+                [validation]="validationMessage.availbility"
+              >
+              </error-mesage>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="third-width" appearance="outline">
+            <mat-label>No. Of Days</mat-label>
+            <input matInput type="text"  placeholder="Name" formControlName="noOfDay"
+              autocomplete="off" required />
+              <mat-error>
+              <error-mesage
+              [control]="form.noOfDay"
+              [validation]="validationMessage.noOfDay"
+            >
+            </error-mesage>
+          </mat-error>
+          </mat-form-field>
+          <mat-form-field class="third-width" appearance="outline">
+            <mat-label>Chesis Number</mat-label>
+  
+            <input
+              matInput
+              type="text"
+              placeholder="Chesis Number"
+              formControlName="chesisNumber"
+              autocomplete="off"
+              required
+            />
+  
+            <mat-error>
+              <error-mesage
+                [control]="form.chesisNumber"
+                [validation]="validationMessage.chesisNumber"
+              >
+              </error-mesage>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="third-width" appearance="outline">
+            <mat-label>Engine Number</mat-label>
+  
+            <input
+              matInput
+              type="text"
+              placeholder="Engine Number"
+              formControlName="engineNumber"
+              autocomplete="off"
+              required
+            />
+            <mat-error>
+              <error-mesage
+                [control]="form.chesisNumber"
+                [validation]="validationMessage.engineNumber"
+              >
+              </error-mesage>
+            </mat-error>
+        
+          </mat-form-field>
+      
+        </div>
+        <div class="mat-form-field pd-left-10">
+          <mat-checkbox formControlName="isTransferable" >
+             Visible To Broker
+          </mat-checkbox>
+            
+      </div> 
+        
+  
+        <mat-card-actions class="form-actions" *ngIf="!isView">
+          <button *ngIf="isAdd"
+            mat-raised-button
+            color="primary"
+            [disabled]="formGroup.invalid"
+            (click)="save()"
+          >
+            Submit
+          </button>
+          <button *ngIf="isEdit"
+          mat-raised-button
+          color="primary"
+          [disabled]="formGroup.invalid"
+          (click)="update()"
+        >
+          Update
+        </button>
+          <!-- <button mat-button (click)="resteForm()" type="button">Reset</button> -->
+        </mat-card-actions>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </div>
+  

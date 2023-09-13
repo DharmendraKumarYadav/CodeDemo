@@ -1,0 +1,22 @@
+:host {
+    display: block;
+    outline: none;
+  
+    .mat-list-item.active {
+    //   background-color: mat-color($app-primary, 50);
+    }
+    &:hover,
+    &:focus {
+      >.mat-list-item:not(.expanded) {
+        // background-color: mat-color($app-primary, 100) !important;
+      }
+    }
+  }
+  
+  .mat-list-item {
+    padding: 4px 0;
+  
+    .routeIcon {
+      margin-right: 20px;
+    }
+  }

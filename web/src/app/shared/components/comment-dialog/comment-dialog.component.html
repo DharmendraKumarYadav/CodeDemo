@@ -1,0 +1,37 @@
+<h2 mat-dialog-title>
+    {{title}}
+  </h2>
+  
+  <div mat-dialog-content>
+    <div class="container bgcolor" fxLayout="row" fxLayoutAlign="center center">
+        <form [formGroup]="formGroup" fxFlex="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+            <div fxLayout="row">
+              <mat-form-field class="Full-width" appearance="outline">
+                <mat-label>Comment</mat-label>
+                <textarea
+                  matInput
+                  type="text"
+                  placeholder="Comment"
+                  formControlName="comment"
+                  autocomplete="off"
+                  required
+                ></textarea>
+      
+                <mat-error *ngIf="formGroup.controls.comment.hasError('required')">
+                Please enter a comment.
+              </mat-error>
+              </mat-form-field>
+  
+            </div>
+           
+      
+
+        </form>
+      </div>
+      
+  </div>
+  
+  <div mat-dialog-actions>
+    <button mat-raised-button cdkFocusInitial (click)="onDismiss()">Cancel</button>
+    <button mat-raised-button   [disabled]="formGroup.invalid" (click)="onConfirm()">Save</button>
+  </div>

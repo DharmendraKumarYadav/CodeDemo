@@ -1,0 +1,23 @@
+<!--dash.component.html-->
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="200px">
+    <!--Mini Cards-->
+    <mat-grid-tile *ngFor="let data of miniCard" [colspan]="( cardLayout | async )?.miniCard.cols"
+      [rowspan]="( cardLayout | async )?.miniCard.rows">
+      <app-mini-card [title]="data.title" [count]="data.count" [colour]="data.colour" [text]="data.text" [icon]="data.icon" ></app-mini-card>
+    </mat-grid-tile>
+    <!--Charts-->
+   <!--Charts-->
+   <mat-grid-tile [colspan]="( cardLayout | async )?.chart.cols" [rowspan]="( cardLayout | async )?.chart.rows">
+    <app-card title="Monthly Booking">
+      <app-booking></app-booking>
+    </app-card>
+  </mat-grid-tile>
+  <mat-grid-tile *ngIf="isAdminstrator" [colspan]="( cardLayout | async )?.chart.cols" [rowspan]="( cardLayout | async )?.chart.rows">
+    <app-card title="Monthly User Registered">
+<app-customer></app-customer>
+    </app-card>
+  </mat-grid-tile>
+  </mat-grid-list>
+ </div>

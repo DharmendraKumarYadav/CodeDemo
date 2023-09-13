@@ -1,0 +1,39 @@
+.pageHeader {
+    height: 50px;
+    font-size: 15px;
+    line-height: 50px;
+    font-weight: 500;
+    color: #FFF;
+}
+body{
+    background-color: #f9f2e2;
+}
+.pageHeader {
+    background: #832526;
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .loginFooterHolder {
+    width: 96%;
+    position: relative;
+    bottom: 0px;
+    height: 38px;
+    background: #8d322a;
+    line-height: 38px;
+    color: #fff;
+    padding: 0 2%;
+    font-size: 0.7rem;
+  } 
+  .loginFooterHolder span.copyright {
+    float: left;
+  }
+  
+  .loginFooterHolder span.links {
+    float: right;
+  }
+  
+  .loginFooterHolder span.links a {
+    color: #fff;
+  }

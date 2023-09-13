@@ -1,0 +1,1 @@
+﻿ Hi {#name#} , booking for {#bikeName#} with Booking Id {#bookingId#} has been cancelled. From: Litra Motors

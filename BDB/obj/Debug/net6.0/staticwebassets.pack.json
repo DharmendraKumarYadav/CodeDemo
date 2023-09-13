@@ -1,0 +1,109 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Workspace\\DekhBikeDekh\\api\\BDB\\wwwroot\\Booking\\Order.pdf",
+      "PackagePath": "staticwebassets\\Booking\\Order.pdf"
+    },
+    {
+      "Id": "D:\\Workspace\\DekhBikeDekh\\api\\BDB\\wwwroot\\MessageTemplates\\Encodable\\Email\\BikeAvailbilityAdmin.mail.html",
+      "PackagePath": "staticwebassets\\MessageTemplates\\Encodable\\Email\\BikeAvailbilityAdmin.mail.html"
+    },
+    {
+      "Id": "D:\\Workspace\\DekhBikeDekh\\api\\BDB\\wwwroot\\MessageTemplates\\Encodable\\Email\\BikeAvailbilityCustomer.mail.html",
+      "PackagePath": "staticwebassets\\MessageTemplates\\Encodable\\Email\\BikeAvailbilityCustomer.mail.html"
+    },
+    {
+      "Id": "D:\\Workspace\\DekhBikeDekh\\api\\BDB\\wwwroot\\MessageTemplates\\Encodable\\Email\\BikeTransferRequest.mail.html",
+      "PackagePath": "staticwebassets\\MessageTemplates\\Encodable\\Email\\BikeTransferRequest.mail.html"
+    },
+    {
+      "Id": "D:\\Workspace\\DekhBikeDekh\\api\\BDB\\wwwroot\\MessageTemplates\\Encodable\\Email\\BikeTransferRequestApprove.mail.html",
+      "PackagePath": "staticwebassets\\MessageTemplates\\Encodable\\Email\\BikeTransferRequestApprove.mail.html"
+    },
+    {
+      "Id": "D:\\Workspace\\DekhBikeDekh\\api\\BDB\\wwwroot\\MessageTemplates\\Encodable\\Email\\BikeTransferRequestReject.mail.html",
+      "PackagePath": "staticwebassets\\MessageTemplates\\Encodable\\Email\\BikeTransferRequestReject.mail.html"
+    },
+    {
+      "Id": "D:\\Workspace\\DekhBikeDekh\\api\\BDB\\wwwroot\\MessageTemplates\\Encodable\\Email\\BookingCancelAdmin.mail.html",
+      "PackagePath": "staticwebassets\\MessageTemplates\\Encodable\\Email\\BookingCancelAdmin.mail.html"
+    },
+    {
+      "Id": "D:\\Workspace\\DekhBikeDekh\\api\\BDB\\wwwroot\\MessageTemplates\\Encodable\\Email\\BookingCancelCustomer.mail.html",
+      "PackagePath": "staticwebassets\\MessageTemplates\\Encodable\\Email\\BookingCancelCustomer.mail.html"
+    },
+    {
+      "Id": "D:\\Workspace\\DekhBikeDekh\\api\\BDB\\wwwroot\\MessageTemplates\\Encodable\\Email\\ContactUsAdmin.mail.html",
+      "PackagePath": "staticwebassets\\MessageTemplates\\Encodable\\Email\\ContactUsAdmin.mail.html"
+    },
+    {
+      "Id": "D:\\Workspace\\DekhBikeDekh\\api\\BDB\\wwwroot\\MessageTemplates\\Encodable\\Email\\ContactUsCustomer.mail.html",
+      "PackagePath": "staticwebassets\\MessageTemplates\\Encodable\\Email\\ContactUsCustomer.mail.html"
+    },
+    {
+      "Id": "D:\\Workspace\\DekhBikeDekh\\api\\BDB\\wwwroot\\MessageTemplates\\Encodable\\Email\\Exception.mail.html",
+      "PackagePath": "staticwebassets\\MessageTemplates\\Encodable\\Email\\Exception.mail.html"
+    },
+    {
+      "Id": "D:\\Workspace\\DekhBikeDekh\\api\\BDB\\wwwroot\\MessageTemplates\\Encodable\\Email\\ForgotPassword.mail.html",
+      "PackagePath": "staticwebassets\\MessageTemplates\\Encodable\\Email\\ForgotPassword.mail.html"
+    },
+    {
+      "Id": "D:\\Workspace\\DekhBikeDekh\\api\\BDB\\wwwroot\\MessageTemplates\\Encodable\\Email\\NewBookingAdmin.mail.html",
+      "PackagePath": "staticwebassets\\MessageTemplates\\Encodable\\Email\\NewBookingAdmin.mail.html"
+    },
+    {
+      "Id": "D:\\Workspace\\DekhBikeDekh\\api\\BDB\\wwwroot\\MessageTemplates\\Encodable\\Email\\NewBookingCustomer.mail.html",
+      "PackagePath": "staticwebassets\\MessageTemplates\\Encodable\\Email\\NewBookingCustomer.mail.html"
+    },
+    {
+      "Id": "D:\\Workspace\\DekhBikeDekh\\api\\BDB\\wwwroot\\MessageTemplates\\Encodable\\Email\\Otp.mail.html",
+      "PackagePath": "staticwebassets\\MessageTemplates\\Encodable\\Email\\Otp.mail.html"
+    },
+    {
+      "Id": "D:\\Workspace\\DekhBikeDekh\\api\\BDB\\wwwroot\\MessageTemplates\\Encodable\\Email\\SignupConfirmation.mail.html",
+      "PackagePath": "staticwebassets\\MessageTemplates\\Encodable\\Email\\SignupConfirmation.mail.html"
+    },
+    {
+      "Id": "D:\\Workspace\\DekhBikeDekh\\api\\BDB\\wwwroot\\MessageTemplates\\Encodable\\Sms\\BookingCancel.sms.txt",
+      "PackagePath": "staticwebassets\\MessageTemplates\\Encodable\\Sms\\BookingCancel.sms.txt"
+    },
+    {
+      "Id": "D:\\Workspace\\DekhBikeDekh\\api\\BDB\\wwwroot\\MessageTemplates\\Encodable\\Sms\\NewBooking.sms.txt",
+      "PackagePath": "staticwebassets\\MessageTemplates\\Encodable\\Sms\\NewBooking.sms.txt"
+    },
+    {
+      "Id": "D:\\Workspace\\DekhBikeDekh\\api\\BDB\\wwwroot\\MessageTemplates\\Encodable\\Sms\\NewBookingCustomer.sms.txt",
+      "PackagePath": "staticwebassets\\MessageTemplates\\Encodable\\Sms\\NewBookingCustomer.sms.txt"
+    },
+    {
+      "Id": "D:\\Workspace\\DekhBikeDekh\\api\\BDB\\wwwroot\\MessageTemplates\\Encodable\\Sms\\Otp.sms.txt",
+      "PackagePath": "staticwebassets\\MessageTemplates\\Encodable\\Sms\\Otp.sms.txt"
+    },
+    {
+      "Id": "D:\\Workspace\\DekhBikeDekh\\api\\BDB\\wwwroot\\MessageTemplates\\Encodable\\img\\logo.png",
+      "PackagePath": "staticwebassets\\MessageTemplates\\Encodable\\img\\logo.png"
+    },
+    {
+      "Id": "D:\\Workspace\\DekhBikeDekh\\api\\BDB\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.BDB.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.BDB.props",
+      "PackagePath": "build\\BDB.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.BDB.props",
+      "PackagePath": "buildMultiTargeting\\BDB.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.BDB.props",
+      "PackagePath": "buildTransitive\\BDB.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

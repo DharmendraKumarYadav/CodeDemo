@@ -1,0 +1,12 @@
+<div>
+    <app-file-upload
+    #fileUpload
+    [uploadSource]="_uploadSource"
+    [statusBar]="_showStatusBar"
+  >
+    <input appFileUploadInput [multiple]="allowMultiple" type="file" />
+    <app-file-upload-caption *ngIf="_showCaption">
+      Supported file types: PDF, TIFF, WORD, PNG, JPEG
+    </app-file-upload-caption>
+  </app-file-upload>
+   </div>

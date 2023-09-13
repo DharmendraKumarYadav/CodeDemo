@@ -1,0 +1,153 @@
+
+
+<mat-card  >
+    <form [formGroup]="formGroup" >
+    <div class="your-header">
+        <div class="your-title">
+         <h2>Booking Report</h2>
+        </div>
+      </div>
+      <mat-card-content>
+        <div fxLayout="row">
+        <mat-form-field class="third-width" appearance="outline" *ngIf="isAdministrator">
+            <mat-label>City</mat-label>
+            <mat-select   formControlName="cityId" >
+              <mat-option *ngFor="let item of cityList" [value]="item.id">
+                {{item.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="third-width" appearance="outline" *ngIf="isAdministrator">
+            <mat-label>Dealer</mat-label>
+            <mat-select   formControlName="dealerId">
+              <mat-option *ngFor="let item of dealerList" [value]="item.id">
+                {{item.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="third-width" appearance="outline" *ngIf="!isAdministrator">
+            <mat-label>Show Room</mat-label>
+            <mat-select   formControlName="showRoomId">
+              <mat-option *ngFor="let item of showRoomList" [value]="item.id">
+                {{item.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="third-width" appearance="outline"  color="primary" (change)="changeDate(0, $event)">
+            <mat-label>Start date</mat-label>
+            <input   formControlName="startDate" #ref matInput [matDatepicker]="picker1" (dateChange)="changeDate(0, ref.value)">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field class="third-width" appearance="outline" color="primary" (change)="changeDate(1, $event)">
+            <mat-label>Finish date</mat-label>
+            <input   formControlName="endDate" #ref1 matInput [matDatepicker]="picker2" (dateChange)="changeDate(1, ref1.value)">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+        </div>
+        
+       
+      </mat-card-content>
+      <mat-card-actions class="form-actions" >
+ 
+            <button
+            mat-raised-button
+            class="btnSignin"
+            color="primary"
+            (click)="onSearch()"
+          >
+            Searh
+          </button>
+          <button 
+          mat-raised-button
+          class="btnSignin"
+          color="primary"
+          (click)="onFilterClear()"
+        >
+          Clear
+        </button>
+     
+          <button
+          mat-raised-button
+          color="primary"
+          (click)="exportToExcel()"
+        > Excel
+        <mat-icon>cloud_download</mat-icon>  
+        </button>
+      
+      
+   
+      </mat-card-actions>
+    </form>
+  </mat-card>
+
+
+
+
+
+<div class="table-warp">
+  <div class="example-table-container">
+    <table mat-table
+           matSort
+           [dataSource]="tableDataSource"
+           class="table mat-elevation-z8"
+    >
+  
+      <ng-container matColumnDef="bookingId">
+        <th matSort mat-header-cell *matHeaderCellDef mat-sort-header> Booking ID</th>
+        <td mat-cell *matCellDef="let element"> {{element['bookingId']}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name</th>
+        <td mat-cell *matCellDef="let element"> {{element['firstName']}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name</th>
+        <td mat-cell *matCellDef="let element"> {{element['lastName']}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="phoneNumber">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Phone Number</th>
+        <td mat-cell *matCellDef="let element"> {{element['phoneNumber']}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email</th>
+        <td mat-cell *matCellDef="let element"> {{element['email']}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="bikeName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Bike Name</th>
+        <td mat-cell *matCellDef="let element"> {{element['bikeName']}} </td>
+      </ng-container>
+      <ng-container matColumnDef="bookingAmount">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header > Booking Amount</th>
+        <td mat-cell *matCellDef="let element"> ₹{{element['bookingAmount']}} </td>
+      </ng-container>
+        
+      <ng-container matColumnDef="bookingDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header > Booking Date</th>
+        <td mat-cell *matCellDef="let element"> {{element['bookingDate']}} </td>
+      </ng-container>
+      <ng-container matColumnDef="paymentStatus">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Payment Status</th>
+        <td mat-cell *matCellDef="let element"> {{element['paymentStatus']}} </td>
+      </ng-container>
+
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns;sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator
+    [pageSizeOptions]="paginationSizes"
+    [pageSize]="defaultPageSize"
+    showFirstLastButtons
+  >
+  </mat-paginator>
+  </div>
+
+
+</div>

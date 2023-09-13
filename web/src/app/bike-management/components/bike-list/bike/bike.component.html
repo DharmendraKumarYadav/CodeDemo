@@ -1,0 +1,665 @@
+<div class="container bgcolor" fxLayout="row" fxLayoutAlign="center center">
+  <mat-horizontal-stepper [linear]="isLinear" #stepper labelPosition="up">
+    <mat-step label="Bike Details" [completed]="generalFormGroup.valid && bikeId!=0">
+      <div style="padding-top: 3%">
+        <form [formGroup]="generalFormGroup" fxFlex="100%" fxFlex.sm="60%" fxFlex.xs="90%">
+          <mat-card>
+            <mat-card-title>Bike Generail Details</mat-card-title>
+            <mat-card-content>
+              <div fxLayout="row">
+                <mat-form-field class="third-width" appearance="outline">
+                  <mat-label>Bike Name</mat-label>
+                  <input matInput type="text" placeholder="Name" formControlName="name" autocomplete="off" required />
+                  <mat-error>
+                    <error-mesage [control]="generalform.name" [validation]="validationMessage.name">
+                    </error-mesage>
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field class="third-width" appearance="outline">
+                  <mat-label>Category</mat-label>
+                  <mat-select formControlName="categoryId" required>
+                    <mat-option>Select Category</mat-option>
+                    <mat-option *ngFor="let item of category" [value]="item.id">{{ item.name }}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error>
+                    <error-mesage [control]="generalform.categoryId" [validation]="validationMessage.category">
+                    </error-mesage>
+                  </mat-error>
+                </mat-form-field>
+                <div style="padding-top: 12px;">
+                  <mat-radio-group formControlName="isElectricBike" class="margin-left">
+                    <mat-radio-button value="1"> Electric </mat-radio-button>
+                    <mat-radio-button value="0"> Non Electric </mat-radio-button>
+                  </mat-radio-group>
+
+                  <!-- <mat-error>
+                    <error-mesage
+                      [control]="form.type"
+                      [validation]="validationMessage.type"
+                    >
+                    </error-mesage>
+                  </mat-error> -->
+                </div>
+                <mat-form-field class="third-width" appearance="outline">
+                  <mat-label>Brand</mat-label>
+                  <mat-select formControlName="brandId" required>
+                    <mat-option>Select Brand</mat-option>
+                    <mat-option *ngFor="let item of brands" [value]="item.id">{{ item.name }}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error>
+                    <error-mesage [control]="generalform.brandId" [validation]="validationMessage.brandId">
+                    </error-mesage>
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field class="third-width" appearance="outline">
+                  <mat-label>Price</mat-label>
+                  <input matInput type="text" placeholder="Price" formControlName="price" autocomplete="off" required />
+                  <mat-error>
+                    <error-mesage [control]="generalform.price" [validation]="validationMessage.price">
+                    </error-mesage>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div fxLayout="row">
+                <mat-form-field class="half-width" appearance="outline">
+                  <mat-label>Select City</mat-label>
+                  <mat-select formControlName="cityIds" required multiple>
+                    <mat-option *ngFor="let item of cityBike" [value]="item.id">{{ item.name }}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error>
+                    <error-mesage [control]="generalform.cityIds" [validation]="validationMessage.city">
+                    </error-mesage>
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field class="half-width" appearance="outline">
+                  <mat-label>Select Colour</mat-label>
+                  <mat-select formControlName="colourIds" required multiple>
+                    <mat-option *ngFor="let item of colours" [value]="item.id">{{ item.name }}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error>
+                    <error-mesage [control]="generalform.colourIds" [validation]="validationMessage.colourIds">
+                    </error-mesage>
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field class="half-width" appearance="outline">
+                  <mat-label>Body Style</mat-label>
+                  <mat-select formControlName="bodyStyleId" required>
+                    <mat-option *ngFor="let item of bodyStyle" [value]="item.id">{{ item.name }}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error>
+                    <error-mesage [control]="generalform.bodyStyleId" [validation]="validationMessage.bodyStyle">
+                    </error-mesage>
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field class="half-width" appearance="outline">
+                  <mat-label>Displacement</mat-label>
+                  <input matInput type="text" placeholder="Displcaement" formControlName="displacement"
+                    autocomplete="off" />
+                  <mat-error>
+                    <error-mesage [control]="generalform.displacement" [validation]="validationMessage.displacement">
+                    </error-mesage>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div fxLayout="row">
+                <mat-form-field class="half-width" appearance="outline">
+                  <mat-label>Short Description</mat-label>
+                  <textarea matInput type="text" placeholder="Description" formControlName="shortDescription"
+                    autocomplete="off" required></textarea>
+                  <mat-error>
+                    <error-mesage [control]="generalform.shortDescription"
+                      [validation]="validationMessage.shortDescription">
+                    </error-mesage>
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field class="half-width" appearance="outline">
+                  <mat-label>Long Description</mat-label>
+                  <textarea matInput type="text" placeholder="Description" formControlName="longDescription"
+                    autocomplete="off" required></textarea>
+                  <mat-error>
+                    <error-mesage [control]="generalform.longDescription"
+                      [validation]="validationMessage.longDescription">
+                    </error-mesage>
+                  </mat-error>
+                </mat-form-field>
+
+              </div>
+              <div fxLayout="row">
+
+                <div>
+                  Upload Bike Brochure
+                </div>
+              </div>
+              <div fxLayout="row">
+
+                <div>
+                  <mat-file-upload [allowMultiple]="_allowMultiple"
+                    (fileChange)="getUploadedBrpucher($event)"></mat-file-upload>
+                </div>
+             
+              </div>
+              <div fxLayout="row">
+
+                
+                <div *ngIf="bikeBroucher" style="padding-top: 20px;">
+                  <div>
+                    <button  mat-raised-button color="primary" cdkFocusInitial (click)="downloadPdf(bikeBroucher.base64,bikeBroucher.name)">Download {{bikeBroucher.name}}</button>
+                    <button  mat-mini-fab color="warn" mat-button (click)="removeBroucer(bikeBroucher.id)">
+                      <mat-icon>delete</mat-icon>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+
+            </mat-card-content>
+          </mat-card>
+          <br />
+          <mat-card>
+            <ng-container formArrayName="variants">
+              <mat-card-title-group>
+                <mat-card-title>Bike Vairants</mat-card-title>
+              </mat-card-title-group>
+              <mat-card-content>
+                <ng-container *ngFor="let quantity of variants().controls; let i = index" [formGroupName]="i">
+                  <div fxLayout="row">
+                    <mat-form-field class="half-width" appearance="outline">
+                      <mat-label>Name</mat-label>
+                      <input matInput type="text" placeholder="Name" formControlName="name" autocomplete="off"
+                        required />
+                      <mat-error>
+                        <error-mesage [control]="variants().controls[i].get('name')"
+                          [validation]="validationMessage.variantName">
+                        </error-mesage>
+                      </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="half-width" appearance="outline">
+                      <mat-label>Specification</mat-label>
+                      <input matInput type="text" placeholder="Name" formControlName="specification" autocomplete="off"
+                        required />
+                      <mat-error>
+                        <error-mesage [control]="
+                            variants().controls[i].get('specification')
+                          " [validation]="validationMessage.specification">
+                        </error-mesage>
+                      </mat-error>
+                    </mat-form-field>
+                    <div class="mat-form-field pt-15">
+                      <button mat-mini-fab type="button" *ngIf="i == 0" (click)="addVariant()"
+                        matTooltip="Add more variants">
+                        <mat-icon>add</mat-icon>
+                      </button>
+                      <button *ngIf="i != 0" mat-mini-fab color="warn" mat-button (click)="removeVaraint(i)">
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                    </div>
+                  </div>
+                </ng-container>
+
+
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-raised-button color="primary" [disabled]="generalFormGroup.invalid || isLoading"
+                  (click)="saveGeneralDetails()">
+                  Save
+                </button>
+                <!-- <button mat-button (click)="resteForm()" type="button">Reset
+                </button> -->
+              </mat-card-actions>
+            </ng-container>
+          </mat-card>
+        </form>
+      </div>
+    </mat-step>
+    <mat-step label="Bike Photo" [completed]="photoFormGroup.valid && bikeId!=0">
+      <div style="padding-top: 3%">
+        <form [formGroup]="photoFormGroup" fxFlex="100%" fxFlex.sm="60%" fxFlex.xs="90%">
+          <mat-card>
+            <mat-card-title-group>
+              <mat-card-title> Bike Image</mat-card-title>
+              <ng-container>
+                <button style="float: right" mat-raised-button color="primary" (click)="create()">
+                  Add Photo
+                </button>
+              </ng-container>
+            </mat-card-title-group>
+            <mat-card-content style="padding-top: 20px;">
+              <div class="mat-elevation-z8">
+                <table mat-table [dataSource]="bikePhotoDataSource">
+
+                  <!-- Position Column -->
+                  <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                  </ng-container>
+
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="imageUrl">
+                    <th mat-header-cell *matHeaderCellDef> Image </th>
+                    <td mat-cell *matCellDef="let element">
+                      <img [src]="element.imageUrl" width="60px" height="60px" alt="Image Source">
+                    </td>
+                  </ng-container>
+                  <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef> Action </th>
+                    <td mat-cell *matCellDef="let element">
+                      <button mat-mini-fab color="warn" mat-button (click)="
+                              removePhoto(element.bikeImageId)
+                            ">
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                      <button color="acent" mat-button (click)="viewPhoto(element)">
+                        <mat-icon>remove_red_eye</mat-icon>
+                      </button>
+                    </td>
+                  </ng-container>
+
+
+
+                  <tr mat-header-row *matHeaderRowDef="bikePhotoColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: bikePhotoColumns;"></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of Images">
+                </mat-paginator>
+
+              </div>
+            </mat-card-content>
+
+          </mat-card>
+        </form>
+      </div>
+    </mat-step>
+    <mat-step label="Bike Price" [completed]="priceFormGroup.valid && bikeId!=0">
+      <div style="padding-top: 3%">
+        <form [formGroup]="priceFormGroup">
+          <mat-card>
+            <ng-container formArrayName="bikeVaraintsPrice">
+              <mat-card-title-group>
+                <mat-card-title>Bike Price</mat-card-title>
+              </mat-card-title-group>
+              <mat-card-title-group>
+                <mat-card-title>
+                  <div fxLayout="row" style="color: red;">Note: You can restrict the minimum price (set by dealer) by
+                    selecting below checkboxes.</div>
+                </mat-card-title>
+              </mat-card-title-group>
+              <mat-card-content>
+
+                <ng-container *ngFor="
+                    let quantity of bikeVaraintsPrice().controls;
+                    let varientIndex = index
+                  " [formGroupName]="varientIndex">
+                  <div fxLayout="row">
+                    <mat-form-field class="full-width" style="padding-right: 23px" appearance="outline">
+                      <mat-label>Bike Variant</mat-label>
+                      <input matInput type="text" placeholder="Name" formControlName="variantName" autocomplete="off"
+                        required />
+                    </mat-form-field>
+                    <div class="mat-form-field pt-15">
+                      <button mat-mini-fab type="button" (click)="addPrice(varientIndex)"
+                        matTooltip="Add price respective  variant">
+                        <mat-icon>add</mat-icon>
+                      </button>
+                    </div>
+                  </div>
+
+                  <ng-container formArrayName="prices">
+                    <ng-container *ngFor="
+                        let price of prices(varientIndex).controls;
+                        let priceIndex = index
+                      " [formGroupName]="priceIndex">
+
+                      <div fxLayout="row">
+                        <div fxFlex="3" style="padding-top: 10px">
+
+                          <mat-checkbox formControlName="isMinPrice"></mat-checkbox>
+                        </div>
+                        <div fxFlex="16">
+                          <mat-form-field class="fourth-width" appearance="outline">
+                            <mat-label>City</mat-label>
+                            <mat-select formControlName="cityId" required>
+                              <mat-option *ngFor="let item of city" [value]="item.id">{{ item.name }}
+                              </mat-option>
+                            </mat-select>
+                            <mat-error>
+                              <error-mesage [control]="
+                              price.get('cityId')
+                                " [validation]="validationMessage.city">
+                              </error-mesage>
+                            </mat-error>
+                          </mat-form-field>
+                        </div>
+
+
+                        <div fxFlex="16">
+                          <mat-form-field class="fourth-width" appearance="outline">
+                            <mat-label>Booking Amount</mat-label>
+                            <input matInput type="text" placeholder="Amount" formControlName="bookingAmount"
+                              autocomplete="off" required />
+                            <mat-error>
+                              <error-mesage [control]="
+                              price.get('bookingAmount')
+                                " [validation]="validationMessage.price">
+                              </error-mesage>
+                            </mat-error>
+                          </mat-form-field>
+                        </div>
+                        <div fxFlex="16">
+                          <mat-form-field class="fourth-width" appearance="outline">
+                            <mat-label>RTO Amount</mat-label>
+                            <input matInput type="text" placeholder="Amount"
+                              (input)="calculateValues(varientIndex, priceIndex)" formControlName="rtoAmount"
+                              autocomplete="off" required />
+                            <mat-error>
+                              <error-mesage [control]="
+                              price.get('rtoAmount')
+                                " [validation]="validationMessage.price">
+                              </error-mesage>
+                            </mat-error>
+                          </mat-form-field>
+                        </div>
+                        <div fxFlex="16">
+                          <mat-form-field class="fourth-width" appearance="outline">
+                            <mat-label>Insurance Amount</mat-label>
+                            <input matInput type="text" placeholder="Amount"
+                              (input)="calculateValues(varientIndex, priceIndex)" formControlName="insuranceAmount"
+                              autocomplete="off" required />
+                            <mat-error>
+                              <error-mesage [control]="
+                              price.get('insuranceAmount')
+                                " [validation]="validationMessage.price">
+                              </error-mesage>
+                            </mat-error>
+                          </mat-form-field>
+                        </div>
+                        <div fxFlex="16">
+                          <mat-form-field class="fourth-width" appearance="outline">
+                            <mat-label>Ex ShowRoom Price</mat-label>
+                            <input matInput type="text" (input)="calculateValues(varientIndex, priceIndex)"
+                              placeholder="Amount" formControlName="exShowRoomAmount" autocomplete="off" required />
+                            <mat-error>
+                              <error-mesage [control]="
+                              price.get('exShowRoomAmount')
+                                " [validation]="validationMessage.price">
+                              </error-mesage>
+                            </mat-error>
+                          </mat-form-field>
+                        </div>
+                        <div fxFlex="16">
+                          <mat-form-field class="fourth-width" appearance="outline">
+                            <mat-label>Total Amount</mat-label>
+                            <input matInput type="text" placeholder="Name" formControlName="totalAmount"
+                              autocomplete="off" required />
+                          </mat-form-field>
+                        </div>
+                        <div style="padding-top: 10px">
+
+                          <button mat-mini-fab color="warn" mat-button (click)="removePrice(varientIndex, priceIndex)">
+                            <mat-icon>delete</mat-icon>
+                          </button>
+                        </div>
+                      </div>
+                    </ng-container>
+                  </ng-container>
+                </ng-container>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-raised-button color="primary" [disabled]="priceFormGroup.invalid"
+                  (click)="savePriceDetails()">
+                  Save
+                </button>
+              </mat-card-actions>
+            </ng-container>
+          </mat-card>
+        </form>
+      </div>
+    </mat-step>
+    <mat-step label="Bike Sepecification" [completed]="specificationFormGroup.valid && bikeId!=0">
+      <div style="padding-top: 3%">
+        <form [formGroup]="specificationFormGroup">
+          <mat-card>
+            <ng-container formArrayName="bikeVaraintsSpecification">
+              <mat-card-title-group>
+                <mat-card-title>Bike Specification</mat-card-title>
+              </mat-card-title-group>
+              <mat-card-content>
+                <ng-container *ngFor="
+                    let quantity of bikeVaraintsSpecification().controls;
+                    let varientIndex = index
+                  " [formGroupName]="varientIndex">
+                  <div fxLayout="row">
+                    <mat-form-field class="full-width pr-7" appearance="outline">
+                      <mat-label>Bike Variant</mat-label>
+                      <input matInput type="text" placeholder="Name" formControlName="variantName" autocomplete="off"
+                        required />
+
+                    </mat-form-field>
+                    <div class="mat-form-field pt-15">
+                      <button mat-mini-fab type="button" (click)="addSpecification(varientIndex)"
+                        matTooltip="Add specificationto respective  variant">
+                        <mat-icon>add</mat-icon>
+                      </button>
+                    </div>
+                  </div>
+                  <ng-container formArrayName="specifications">
+                    <ng-container *ngFor="
+                        let spec of specifications(varientIndex).controls;
+                        let specIndex = index
+                      " [formGroupName]="specIndex">
+                      <div fxLayout="row">
+                        <mat-form-field class="third-width" appearance="outline">
+                          <mat-label>Specification</mat-label>
+                          <mat-select formControlName="specificationId" required>
+                            <mat-option *ngFor="let item of specificationList" [value]="item.id">{{ item.name }}
+                            </mat-option>
+                          </mat-select>
+                          <mat-error>
+                            <error-mesage [control]="
+                            spec.get('specificationId')
+                              " [validation]="validationMessage.specific">
+                            </error-mesage>
+                          </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="third-width" appearance="outline">
+                          <mat-label>Attributes</mat-label>
+                          <mat-select formControlName="attributeId" required>
+                            <mat-option *ngFor="let item of attributeListSpec" [value]="item.id">{{ item.name }}
+                            </mat-option>
+                          </mat-select>
+                          <mat-error>
+                            <error-mesage [control]="
+                            spec.get('attributeId')
+                              " [validation]="validationMessage.attributes">
+                            </error-mesage>
+                          </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="third-width" appearance="outline">
+                          <mat-label>Attribute Value</mat-label>
+                          <input matInput type="text" placeholder="Value" formControlName="attributeValue"
+                            autocomplete="off" required />
+                          <mat-error>
+                            <error-mesage [control]="
+                            spec.get('attributeValue')
+                              " [validation]="validationMessage.attributeValue">
+                            </error-mesage>
+                          </mat-error>
+                        </mat-form-field>
+                        <div style="padding-top: 10px; padding-right: 0px">
+                          <button mat-mini-fab color="warn" mat-button (click)="
+                              removeSpecification(varientIndex, specIndex)
+                            ">
+                            <mat-icon>delete</mat-icon>
+                          </button>
+                        </div>
+                      </div>
+                    </ng-container>
+                  </ng-container>
+                </ng-container>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-raised-button color="primary" [disabled]="specificationFormGroup.invalid || isLoading"
+                  (click)="saveSpecificationDetails()">
+                  Save
+                </button>
+              </mat-card-actions>
+            </ng-container>
+          </mat-card>
+        </form>
+      </div>
+    </mat-step>
+    <mat-step [completed]="featureFormGroup.valid && bikeId!=0" label="Bike Features">
+      <div style="padding-top: 3%">
+        <form [formGroup]="featureFormGroup">
+          <mat-card>
+            <ng-container formArrayName="bikeVaraintsFeature">
+              <mat-card-title-group>
+                <mat-card-title>Bike Features</mat-card-title>
+              </mat-card-title-group>
+              <mat-card-content>
+                <ng-container *ngFor="
+                    let quantity of bikeVaraintsFeature().controls;
+                    let varientIndex = index
+                  " [formGroupName]="varientIndex">
+                  <div fxLayout="row">
+                    <mat-form-field class="full-width pr-7" appearance="outline">
+                      <mat-label>Bike Variant</mat-label>
+                      <input matInput type="text" placeholder="Name" formControlName="variantName" autocomplete="off"
+                        required />
+                    </mat-form-field>
+                    <div class="mat-form-field pt-15">
+                      <button mat-mini-fab type="button" (click)="addFeature(varientIndex)"
+                        matTooltip="Add feature respective  variant">
+                        <mat-icon>add</mat-icon>
+                      </button>
+                    </div>
+                  </div>
+                  <ng-container formArrayName="features">
+                    <ng-container *ngFor="
+                        let spec of features(varientIndex).controls;
+                        let featIndex = index
+                      " [formGroupName]="featIndex">
+                      <div fxLayout="row">
+                        <mat-form-field class="half-width" appearance="outline">
+                          <mat-label>Attributes</mat-label>
+                          <mat-select formControlName="attributeId" required>
+                            <mat-option *ngFor="let item of attributeListFeature" [value]="item.id">{{ item.name }}
+                            </mat-option>
+                          </mat-select>
+                          <mat-error>
+                            <error-mesage [control]="
+                            spec.get('attributeId')
+                              " [validation]="validationMessage.attributes">
+                            </error-mesage>
+                          </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="half-width" appearance="outline">
+                          <mat-label>Attribute Value</mat-label>
+                          <input matInput type="text" placeholder="Name" formControlName="attributeValue"
+                            autocomplete="off" required />
+                          <mat-error>
+                            <error-mesage [control]="
+                              spec.get('attributeValue')
+                                " [validation]="validationMessage.attributeValue">
+                            </error-mesage>
+                          </mat-error>
+                        </mat-form-field>
+                        <div style="padding-top: 10px">
+                          <button mat-mini-fab color="warn" mat-button
+                            (click)="removeFeatures(varientIndex, featIndex)">
+                            <mat-icon>delete</mat-icon>
+                          </button>
+                        </div>
+                      </div>
+                    </ng-container>
+                  </ng-container>
+                </ng-container>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-raised-button color="primary" [disabled]="featureFormGroup.invalid || isLoading"
+                  (click)="saveFeatureDetails()">
+                  Save
+                </button>
+                <!-- <button mat-button (click)="resteForm()" type="button">
+                  Reset
+                </button> -->
+              </mat-card-actions>
+            </ng-container>
+          </mat-card>
+        </form>
+      </div>
+    </mat-step>
+    <!-- <mat-step label="Related Bike"  [completed]="featureFormGroup.valid && bikeId!=0">
+      <div style="padding-top: 3%">
+        <form [formGroup]="photoFormGroup" fxFlex="100%" fxFlex.sm="60%" fxFlex.xs="90%">
+          <mat-card>
+            <mat-card-title-group>
+              <mat-card-title> Related Bikes</mat-card-title>
+              <ng-container>
+                <button  style="float: right" mat-raised-button color="primary" (click)="addRelatedBike()">
+                    Add Bikes
+                </button>
+              </ng-container>
+            </mat-card-title-group>
+            <mat-card-content style="padding-top: 20px;">
+              <div class="mat-elevation-z8"  >
+                <table mat-table [dataSource]="bikeRelatedDataSource" >
+
+              
+                  <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                  </ng-container>
+                
+            
+                  <ng-container matColumnDef="category">
+                    <th mat-header-cell *matHeaderCellDef> Category </th>
+                    <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+                  </ng-container>
+                  
+                    <ng-container matColumnDef="brandName">
+                      <th mat-header-cell *matHeaderCellDef> BeandName </th>
+                      <td mat-cell *matCellDef="let element"> {{element.brandName}} </td>
+                      
+                    </ng-container>
+                    <ng-container matColumnDef="bodyStyle">
+                      <th mat-header-cell *matHeaderCellDef> Body Style </th>
+                      <td mat-cell *matCellDef="let element"> {{element.bodyStyle}} </td>
+                      
+                    </ng-container>
+                  <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef> Action </th>
+                    <td mat-cell *matCellDef="let element"> 
+                      <button mat-mini-fab color="warn" mat-button (click)="
+                              deleteSimilarBike(element.id)
+                            ">
+                            <mat-icon>delete</mat-icon>
+                          </button>
+                      
+                    </td>
+                  </ng-container>
+                
+                 
+                
+                  <tr mat-header-row *matHeaderRowDef="bikeRelatedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: bikeRelatedColumns;"></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                showFirstLastButtons
+                aria-label="Select page of Images">
+ </mat-paginator>
+                
+              </div>
+            </mat-card-content>
+         
+          </mat-card>
+        </form>
+      </div>
+    </mat-step> -->
+
+  </mat-horizontal-stepper>
+</div>

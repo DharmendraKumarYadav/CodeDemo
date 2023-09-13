@@ -1,0 +1,285 @@
+.btnSignin {
+    width: 100%;
+    height: 45px;
+  }
+
+
+
+  .loginContentHolder a:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+  
+  .loginContentHolder div.loginHolder {
+    width: 250px;
+    height: 300px;
+    margin-right: 40px;
+    float: left;
+  }
+  
+  .loginContentHolder div.txtboxHolder input {
+    width: 230px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: #cccccc solid 1px;
+    border-radius: 5px;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+  }
+  
+  .loginContentHolder div.chkboxHolder {
+    width: 250px;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .loginContentHolder div.btnHolder {
+    margin-bottom: 10px;
+  }
+  
+  .loginContentHolder div.btnHolder input {
+    width: 118px;
+    height: 33px;
+    border: #9c3a3b solid 1px;
+    background: #9c3a3b;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 15px;
+    margin-right: 10px;
+    outline: none;
+  }
+  
+  .loginContentHolder div.btnHolder input.btnCancel {
+    border: #cccccc solid 1px;
+    background: #fff;
+    color: #000;
+    margin-right: 0px;
+  }
+  
+  .loginContentHolder div.btnHolder input:focus {
+    border: #f28707 solid 1px;
+    background: #fff;
+    color: #9c3a3b;
+  }
+  
+  .loginContentHolder div.linksHolder {
+    width: 250px;
+  }
+  
+  .loginContentHolder div.linksHolder a {
+    display: block;
+    line-height: 35px;
+    text-indent: 25px;
+  }
+  
+
+  .loginContentHolder div.vKeyboardHolder {
+    width: 385px;
+    margin-right: 40px;
+    height: 300px;
+    float: left;
+  }
+  
+  .loginContentHolder div.vKeyboardHolder div.vKeyHowto {
+    width: 385px;
+    height: 50px;
+    float: left;
+  }
+  
+  .loginContentHolder div.vKeyboardHolder div.vKeyHowto a {
+    display: block;
+    width: 238px;
+    height: 28px;
+    background: #fff;
+    border: #f28707 solid 1px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #832526;
+    line-height: 28px;
+    text-decoration: none;
+  }
+  
+  .loginContentHolder div.vKeyboardHolder div.vkeyMovingHolder {
+    width: 385px;
+    height: 250px;
+    float: left;
+    position: relative;
+  }
+  
+  .loginContentHolder div.termsCondHolder {
+    width: 285px;
+    height: 300px;
+    float: left;
+  }
+  
+  .vkDescHolder {
+    width: 960px;
+    float: left;
+    padding: 20px 20px 5px 20px;
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  /* .vkDescHolder p {
+    padding-bottom: 15px;
+  } */
+  
+  .vkDescHolder img.entrustSeal {
+    position: absolute;
+    right: 30px;
+    top: 40px;
+  }
+  
+  .loginContentHolder {
+    margin: 30px auto 100px auto;
+  }
+  
+  .loginContentHolder a {
+    color: #0e0303;
+    text-decoration: none;
+  }
+  
+  .loginContentHolder a:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+  
+  .loginContentHolder div.loginHolder {
+    width: 250px;
+    height: 300px;
+    margin-right: 40px;
+    float: left;
+  }
+  
+  .loginContentHolder div.txtboxHolder input {
+    width: 230px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: #cccccc solid 1px;
+    border-radius: 5px;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+  }
+  
+  .loginContentHolder div.chkboxHolder {
+    width: 250px;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .loginContentHolder div.btnHolder {
+    margin-bottom: 10px;
+  }
+  
+  .loginContentHolder div.btnHolder input {
+    width: 118px;
+    height: 33px;
+    border: #9c3a3b solid 1px;
+    background: #9c3a3b;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 15px;
+    margin-right: 10px;
+    outline: none;
+  }
+  
+  .loginContentHolder div.btnHolder input.btnCancel {
+    border: #cccccc solid 1px;
+    background: #fff;
+    color: #000;
+    margin-right: 0px;
+  }
+  
+  .loginContentHolder div.btnHolder input:focus {
+    border: #f28707 solid 1px;
+    background: #fff;
+    color: #9c3a3b;
+  }
+  
+  .loginContentHolder div.linksHolder {
+    width: 250px;
+  }
+  
+  .loginContentHolder div.linksHolder a {
+    display: block;
+    line-height: 35px;
+    text-indent: 25px;
+  }
+  
+
+  
+  .loginContentHolder div.vKeyboardHolder {
+    width: 385px;
+    margin-right: 40px;
+    height: 300px;
+    float: left;
+  }
+  
+  .loginContentHolder div.vKeyboardHolder div.vKeyHowto {
+    width: 385px;
+    height: 50px;
+    float: left;
+    color:red !important;
+  }
+  
+  .loginContentHolder div.vKeyboardHolder div.vKeyHowto span {
+    display: block;
+    width: 238px;
+    height: 28px;
+    background: #fff;
+    border: #f28707 solid 1px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    //color: #832526;
+    line-height: 28px;
+    text-decoration: none;
+    color: red !important;
+  }
+  
+  .loginContentHolder div.vKeyboardHolder div.vkeyMovingHolder {
+    width: 385px;
+    height: 250px;
+    float: left;
+    position: relative;
+  }
+  
+  .loginContentHolder div.termsCondHolder {
+    width: 285px;
+    height: 300px;
+    float: left;
+  }
+  
+  .btnCancel {
+    border: #cccccc solid 1px;
+    background: #fff;
+    color: #000;
+    margin-right: 0px;
+    width: 110px;
+    height: 33px;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-right: 10px;
+    outline: none;
+  }
+  .login{
+
+    height: 33px;
+  
+    border-radius: 5px;
+    font-size: 15px;
+    outline: none;
+  }
+  
+
+  .p1 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.1em
+  }

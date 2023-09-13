@@ -1,0 +1,304 @@
+<div class="container bgcolor">
+    <form fxFlex="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+        <mat-card>
+          
+             <button style="float: right;"      mat-raised-button
+             color="primary" routerLink="/booking-management/booking" type="button">Back</button>
+            <mat-card-title>Booking Details</mat-card-title>
+          
+            <mat-card-content>
+            <div style="margin-top: 40px;">
+                <mat-accordion>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Customer Details
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <div fxLayout="row">
+
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Booking Number</mat-label>
+                                <input matInput disabled value="{{formData.bookingNumber}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Booking Date</mat-label>
+
+                                <input matInput disabled value="{{formData.bookingDate}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Payment Status </mat-label>
+                                <input matInput disabled value="{{formData.paymentStatus}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Booking Status </mat-label>
+                                <input matInput disabled value="{{formData.bookingStatus}}" />
+                            </mat-form-field>
+
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Booking Amount </mat-label>
+                                <span matPrefix>₹</span>
+                                <input matInput disabled value="{{formData.amount}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Booked By </mat-label>
+                                <input matInput disabled value="{{formData.bookedBy}}" />
+                            </mat-form-field>
+
+
+                        </div>
+                        <div fxLayout="row">
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Customer Name</mat-label>
+                                <input matInput disabled value="{{formData.fullName}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Mobile Number </mat-label>
+                                <input matInput disabled value="{{formData.phoneNumber}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Email Id </mat-label>
+                                <input matInput disabled value="{{formData.email}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Address</mat-label>
+                                <input matInput disabled value="{{formData.address1}}" /> <input matInput disabled
+                                    value="{{formData.address2}}" />
+
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>City</mat-label>
+                                <input matInput disabled value="{{formData.city}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Pin Code</mat-label>
+                                <input matInput disabled value="{{formData.postalCode}}" />
+                            </mat-form-field>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+                <mat-accordion>
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Bike Details
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <div fxLayout="row">
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Bike</mat-label>
+                                <input matInput disabled value="{{formData.bikeName}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Bike Avg Price</mat-label>
+                                <input matInput disabled value="{{formData.bikePrice}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Bike Variant </mat-label>
+                                <input matInput disabled value="{{formData.bikeVariantName}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Specification </mat-label>
+                                <input matInput disabled value="{{formData.bikeSpecification}}" />
+                            </mat-form-field>
+
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Colour</mat-label>
+                                <input matInput disabled value="{{formData.bikeColour}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Body Style</mat-label>
+                                <input matInput disabled value="{{formData.bodyStyle}}" />
+                            </mat-form-field>
+
+
+                        </div>
+                        <div fxLayout="row">
+                            <mat-form-field class="fourth-width" *ngIf="formData.isElectricBike"
+                                floatLabel="always" class="static-text">
+                                <mat-label>Electric Bike</mat-label>
+                                <input matInput disabled value="{{formData.isElectricBike}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" *ngIf="!formData.isElectricBike"
+                                floatLabel="always" class="static-text">
+                                <mat-label>Displacement</mat-label>
+                                <input matInput disabled value="{{formData.displcaement}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Category </mat-label>
+                                <input matInput disabled value="{{formData.category}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Brand</mat-label>
+                                <input matInput disabled value="{{formData.brand}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Chesis Number </mat-label>
+                                <input matInput disabled value="{{formData.chesisNumber}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Engine Number </mat-label>
+                                <input matInput disabled value="{{formData.engineNumber}}" />
+                            </mat-form-field>
+
+
+                        </div>
+                        <div fxLayout="row">
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Variant Price</mat-label>
+                                <input matInput disabled value="{{formData.variantPrice}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Ex ShowRoom Price</mat-label>
+                                <input matInput disabled value="{{formData.exShowRoomPrice}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>RTO Price</mat-label>
+                                <input matInput disabled value="{{formData.rtoPrice}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Insuarance Price </mat-label>
+                                <input matInput disabled value="{{formData.insurancePrice}}" />
+                            </mat-form-field>
+
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+                <mat-accordion>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Show Room Details
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <div fxLayout="row">
+
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Show Room Name</mat-label>
+                                <input matInput disabled value="{{formData.showRoomName}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>ShowRoom Mobile</mat-label>
+
+                                <input matInput disabled value="{{formData.showRoomMobileNumber}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>ShowRoom Email </mat-label>
+                                <input matInput disabled value="{{formData.showRoomEmail}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>ShowRoom Phone </mat-label>
+                                <input matInput disabled value="{{formData.showRoomPhoneNumber}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Area </mat-label>
+                                <input matInput disabled value="{{formData.showRoomArea}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>City </mat-label>
+                                <input matInput disabled value="{{formData.showRoomCity}}" />
+                            </mat-form-field>
+
+                        </div>
+                        <div fxLayout="row">
+
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Address</mat-label>
+                                <input matInput disabled value="{{formData.showRoomAddressLine1}}" />,
+                                <input matInput disabled value="{{formData.showRoomAddressLine2}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Pin Code</mat-label>
+
+                                <input matInput disabled value="{{formData.showRoomPinCode}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>State </mat-label>
+                                <input matInput disabled value="{{formData.showRoomState}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Country </mat-label>
+                                <input matInput disabled value="{{formData.showRoomCountry}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Location</mat-label>
+                                <input matInput disabled value="" />
+                                <a target="_blank" href="{{formData.url}}">Show Location</a>
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Mobile Number </mat-label>
+                                <input matInput disabled value="{{formData.phoneNumber}}" />
+                            </mat-form-field>
+
+                        </div>
+                        <div fxLayout="row">
+
+
+
+
+
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Bike</mat-label>
+
+                                <input matInput disabled value="{{formData.bikeName}}" />
+                            </mat-form-field>
+
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Bike Variant </mat-label>
+                                <input matInput disabled value="{{formData.bikeVariantName}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Specification </mat-label>
+                                <input matInput disabled value="{{formData.bikeSpecification}}" />
+                            </mat-form-field>
+
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Colour</mat-label>
+                                <input matInput disabled value="{{formData.bikeColour}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Body Style</mat-label>
+                                <input matInput disabled value="{{formData.bodyStyle}}" />
+                            </mat-form-field>
+
+
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+                <mat-accordion>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Dealer/Broker Details
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <div fxLayout="row">
+
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label>Name</mat-label>
+                                <input matInput disabled value="{{formData.showRoomOwnerName}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label> Mobile</mat-label>
+
+                                <input matInput disabled value="{{formData.showRoomOwnerMobile}}" />
+                            </mat-form-field>
+                            <mat-form-field class="fourth-width" floatLabel="always" class="static-text">
+                                <mat-label> Email </mat-label>
+                                <input matInput disabled value="{{formData.showRoomOwnerEmail}}" />
+                            </mat-form-field>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+            </mat-card-content>
+        </mat-card>
+    </form>
+</div>

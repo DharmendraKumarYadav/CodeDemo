@@ -1,0 +1,26 @@
+<div class="navbar-container" disableRightClick>
+  <mat-toolbar class="navbar" color="primary">
+    <mat-toolbar-row>
+      <a class="navbar-brand" routerLink="/" matTooltip="Home">
+        <a href="#"
+          ><img
+            [src]="logo"
+            width="60"
+            height="50"
+            alt="Dekh Bike Dekh"
+            title="Dekh Bike Dekh"
+            class="logo"
+        /></a>
+      </a>
+      <!-- <span class="example-spacer"></span> -->
+      <span
+        style="padding-left: 20px; padding-bottom: 8px"
+        class="example-spacer"
+        ><b>DekhBikeDekh</b></span
+      >
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>
